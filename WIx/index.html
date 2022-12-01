@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post and Recieve message  </title>
+    <!-- <link rel="stylesheet" href="style.css" > -->
+</head>
+<body style="margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'poppins',sans-serif;">
+    <div class="container" style="  width:100%;
+    height:100vh;
+    background:#001660;
+    display: flex;
+    align-items: center;
+    justify-content: center;">
+        <form style=" background: white;
+        display:flex;
+        flex-direction: column;
+        padding: 2vw 4vw;
+        width:90%;
+        max-width: 600px;
+        border-radius: 10px;
+    "onsubmit="sendEmail(); reset();return false;">
+            <h3 style=" color:#555;
+            font-weight: 800;
+            margin-bottom: 20px;">JOIN US</h3>
+            <input style=" border: 0;
+            margin:10px 0;
+            padding:20px;
+            outline: none;
+            background: whitesmoke;
+            font-size: 16px;"type="text" id="name" placeholder="Your Name" required>
+            <input  style=" border: 0;
+            margin:10px 0;
+            padding:20px;
+            outline: none;
+            background: whitesmoke;
+            font-size: 16px;" type="email" id="email" placeholder="Email ID" required>
+            <input  style=" border: 0;
+            margin:10px 0;
+            padding:20px;
+            outline: none;
+            background: whitesmoke;
+            font-size: 16px;" type="text" id="phone" placeholder="Phone no." required>
+           <textarea  style=" border: 0;
+           margin:10px 0;
+           padding:20px;
+           outline: none;
+           background: whitesmoke;
+           font-size: 16px;" id="message"  rows="4" placeholder="How can we help you ?"></textarea>
+           <button style=" padding:15px;
+           background:#ff5361 ;
+           color:#fff;
+           font-size: 18px;
+           border:0;
+           outline: none;
+           cursor:pointer;
+           width:150px;
+           margin:20px auto 0;
+           border-radius: 30px;"type="submit">Send</button>
+
+        </form>
+    </div>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script>
+        function sendEmail(){
+            Email.send({
+    Host : "smtp.elasticemail.com",
+    Username : "udayjordan1@gmail.com",
+    Password : "3D7F05273CDB745317850ECC7492A9454B35",
+    To : 'udayjordan1@gmail.com',
+    From : document.getElementById("email").value,
+    Subject : "New contact Form Enquiry",
+    Body : "And this is the body"
+}).then(
+  message => alert(message)
+);
+        }
+    </script>
+</body>
+</html>
